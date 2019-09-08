@@ -10,11 +10,6 @@ namespace DPI.Services
     {
         private readonly IDataBroker dataBroker;
 
-        public DataService()
-        {
-            this.dataBroker = DependencyService.Get<IDataBroker>();
-        }
-
         public DataService(IDataBroker dataBroker)
         {
             this.dataBroker = dataBroker;

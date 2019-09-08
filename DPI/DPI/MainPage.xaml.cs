@@ -19,8 +19,9 @@ namespace DPI
 
         public MainPage(IDataService dataService)
         {
-            this.dataService = dataService;
             InitializeComponent();
+
+            this.dataService = dataService;
             this.Label.Text = this.dataService.RetrieveData();
         }
     }
