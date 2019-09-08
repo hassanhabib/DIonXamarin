@@ -1,4 +1,5 @@
 ﻿using DPI.Brokers;
+using DPI.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +15,13 @@ namespace DPI
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        private IDataBroker dataBroker;
+        private IDataService dataService;
 
-        public MainPage(IDataBroker dataBroker)
+        public MainPage(IDataService dataService)
         {
-            this.dataBroker = dataBroker;
+            this.dataService = dataService;
             InitializeComponent();
-            this.Label.Text = this.dataBroker.GetData();
+            this.Label.Text = this.dataService.RetrieveData();
         }
     }
 }

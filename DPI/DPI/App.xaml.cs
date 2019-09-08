@@ -1,4 +1,5 @@
 ﻿using DPI.Brokers;
+using DPI.Services;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,9 +12,10 @@ namespace DPI
         {
             InitializeComponent();
 
+            DependencyService.Register<IDataService, DataService>();
             DependencyService.Register<IDataBroker, DataBroker>();
 
-            MainPage = new MainPage(DependencyService.Get<IDataBroker>());
+            MainPage = new MainPage(DependencyService.Get<IDataService>());
         }
 
         protected override void OnStart()
